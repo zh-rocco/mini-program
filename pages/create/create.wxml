@@ -1,0 +1,47 @@
+<import src="/common/head.wxml" />
+
+<view class='container'>
+  <template is="head" data="{{ title: '新增菜品' }}" />
+
+  <view class='page-body'>
+
+    <view class='page-section'>
+      <i-input title="菜品名称" placeholder="菜名" maxlength="20" value="{{ title }}" bind:blur="handleTitleChange" />
+      <i-input title="菜品描述" placeholder="描述" maxlength="100" value="{{ desc }}" bind:blur="handleDescChange" />
+    </view>
+
+    <view class='page-section'>
+      <view class="weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">点击可预览选好的图片</view>
+                <view class="weui-uploader__info">{{ imageList.length }} / {{ count }}</view>
+              </view>
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files clear-fix">
+                  <block wx:for="{{ imageList }}" wx:key="*this" wx:for-item="image">
+                    <view class="weui-uploader__file">
+                      <image class="weui-uploader__img" src="{{ image }}" data-src="{{ image }}" bind:tap="previewImage"></image>
+                    </view>
+                  </block>
+                </view>
+                <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='page-section btn-area'>
+      <button type="primary" bind:tap="handleCreateTap">新增</button>
+    </view>
+  </view>
+</view>
+
+<i-toast id="toast" />
+<i-message id="message" />

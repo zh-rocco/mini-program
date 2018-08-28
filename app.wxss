@@ -1,0 +1,61 @@
+@import './common/style/weui.wxss';
+
+/* reset */
+
+page {
+  background-color: #f8f8f8;
+  height: 100%;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* reset */
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.clear-fix::before, .clear-fix::after {
+  content: '';
+  display: table;
+}
+
+.clear-fix::after {
+  clear: both;
+}
+
+/* page */
+
+.page-head {
+  padding: 60rpx 50rpx 80rpx;
+  text-align: center;
+  font-size: 0;
+}
+
+.page-head-title {
+  display: inline-flex;
+  padding: 0 40rpx 20rpx 40rpx;
+  height: 40rpx;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #bebebe;
+}
+
+.page-head-line {
+  margin: 0 auto;
+  width: 150rpx;
+  height: 2rpx;
+  background-color: #d8d8d8;
+}
+
+.page-head-desc {
+  padding-top: 20rpx;
+  color: #9b9b9b;
+  font-size: 32rpx;
+}
+
+.page-section {
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "报餐系统",
+  "usingComponents": {
+    "i-message": "/iview/message/index",
+    "i-modal": "/iview/modal/index",
+    "i-toast": "/iview/toast/index"
+  }
+}

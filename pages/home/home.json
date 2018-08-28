@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "报餐系统",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-message": "/iview/message/index",
+    "i-modal": "/iview/modal/index",
+    "i-toast": "/iview/toast/index"
+  }
+}

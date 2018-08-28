@@ -1,0 +1,36 @@
+<import src="/common/head.wxml" />
+
+<view class="container">
+  <template is="head" data="{{ title: '菜品' }}" />
+
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+
+  <view class="page-section">
+    <navigator class="food" wx:for="{{ dishesList }}" wx:key="*this.id" wx:for-item="food" url="{{ '/pages/detail/detail?id=' + food.id }}">
+      <view class="food--left">
+        <image class="image" src="{{ food.images[0] }}" mode="aspectFit" lazy-load />
+      </view>
+      <view class="food--right">
+        <text class="text ellipsis">{{ food.title }}</text>
+        <text class="text ellipsis">{{ food.desc }}</text>
+        <view class="section">
+          <button class="mini-btn" type="primary" size="mini" data-id="{{ food.id }}" catch:tap="handleOrder">添加</button>
+          <button class="mini-btn" type="warn" size="mini" data-item="{{ food }}" catch:tap="handleDelete">删除</button>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+
+<i-toast id="toast" />
+<i-message id="message" />
+<i-modal title="删除确认" visible="{{ isDeleteModal }}" actions="{{ deleteActions }}" bind:click="hideDeleteModal">
+  <view>删除后无法恢复哦</view>
+</i-modal>

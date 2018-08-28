@@ -1,0 +1,25 @@
+<import src="/common/head.wxml" />
+
+<view class="container">
+  <template is="head" data="{{ title: food.title }}" />
+
+  <view class="page-section text-section">
+    <text class="label">详情：</text> {{ food.desc }}
+  </view>
+
+  <view class="page-section text-section">
+    <text class="label">当日销量：</text> {{ food.amount }}
+  </view>
+
+  <view class="page-section text-section">
+    <text class="label">总销量：</text> {{ food.total_amount }}
+  </view>
+
+  <view class="page-section image-section">
+    <image class="image" mode="widthFix" lazy-load wx:for="{{ food.images }}" wx:key="*this" wx:for-item="image" src="{{ image }}" data-src="{{ image }}" bind:tap="previewImage" />
+  </view>
+</view>
+
+
+<i-toast id="toast" />
+<i-message id="message" />

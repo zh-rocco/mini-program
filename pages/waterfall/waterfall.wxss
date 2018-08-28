@@ -1,0 +1,50 @@
+.waterfall__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16rpx;
+}
+
+.waterfall__left, .waterfall__right {
+  width: 48%;
+}
+
+.waterfall__left .waterfall__item:not(:first-child),
+.waterfall__right .waterfall__item:not(:first-child) {
+  margin-top: 32rpx;
+}
+
+.waterfall__item {
+  border-radius: 8rpx;
+  box-shadow: 0 2rpx 8rpx 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.waterfall__item .image {
+  width: 100%;
+}
+
+.waterfall__content {
+  display: flex;
+  flex-direction: column;
+  padding: 32rpx;
+}
+
+.waterfall__title {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.waterfall__desc {
+  display: -webkit-box;
+  margin-top: 8rpx;
+  white-space: normal;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.navigator-hover {
+  background-color: transparent;
+  opacity: 1;
+}

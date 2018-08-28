@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "brickLayout": "plugin://brickLayout/brickLayout",
+    "i-message": "/iview/message/index",
+    "i-modal": "/iview/modal/index",
+    "i-toast": "/iview/toast/index"
+  }
+}

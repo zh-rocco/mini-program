@@ -1,0 +1,36 @@
+<import src="/common/head.wxml" />
+
+<view class="container">
+  <template is="head" data="{{ title: '瀑布流' }}" />
+
+  <view class='page-section'>
+    <view class='waterfall__wrapper'>
+      <view class='waterfall__left'>
+        <navigator class='waterfall__item' wx:for="{{ dataLeft }}" wx:key="*this.id" wx:for-item="item" url="{{ '/pages/detail/detail?id=' + item.id }}">
+          <image class="image" src="{{ item.images[0] }}" mode='widthFix' lazy-load />
+          <view class='waterfall__content'>
+            <text class="waterfall__title ellipsis">{{ item.title }}</text>
+            <text class="waterfall__desc ellipsis">{{ item.desc }}</text>
+          </view>
+        </navigator>
+      </view>
+
+      <view class='waterfall__right'>
+        <navigator class='waterfall__item' wx:for="{{ dataRight }}" wx:key="*this.id" wx:for-item="item" url="{{ '/pages/detail/detail?id=' + item.id }}">
+          <image class="image" src="{{ item.images[0] }}" mode='widthFix' lazy-load />
+          <view class='waterfall__content'>
+            <text class="waterfall__title ellipsis">{{ item.title }}</text>
+            <text class="waterfall__desc ellipsis">{{ item.desc }}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<i-toast id="toast" />
+<i-message id="message" />
+<i-modal title="删除确认" visible="{{ isDeleteModal }}" actions="{{ deleteActions }}" bind:click="hideDeleteModal">
+  <view>删除后无法恢复哦</view>
+</i-modal>

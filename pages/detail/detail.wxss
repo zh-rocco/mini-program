@@ -1,0 +1,17 @@
+.text-section, .image-section {
+  padding: 0 40rpx;
+}
+
+.text-section {
+  color: #999;
+}
+
+.text-section .label {
+  color: #333;
+}
+
+.image-section .image {
+  display: block;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
